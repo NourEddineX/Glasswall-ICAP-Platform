@@ -19,7 +19,7 @@ data "terraform_remote_state" "rancher_server" {
 
 resource "null_resource" "git_server" {
   provisioner "local-exec" {
-    command = "scp src rancher-bootstrap"
+    command = "scp -r src ../rancher-bootstrap"
     interpreter = ["/bin/bash", "-c"]
   }
 
