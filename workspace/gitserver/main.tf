@@ -19,16 +19,22 @@ data "terraform_remote_state" "rancher_server" {
 
 resource "null_resource" "git_server" {
   provisioner "local-exec" {
-    command = "scp -r src ../rancher-bootstrap"
+    command = "tar -czf gitserver.tar.gz src/"
     interpreter = ["/bin/bash", "-c"]
+  }
+
+  provisioner "file" {
+    source = "gitserver.tar.gz"
+    destination = "/home/azure-user"
   }
 
   provisioner "remote-exec" {
     inline = [
-      "cd ../rancher-bootstrap/src",
-      "docker build git-server",
-      "cd example",
-      "docker-compose up",
+      "sudo cp gitserver.tar.gz /opt",
+      "cd /opt",
+      "sudo tar -xzf gitserver.tar.gz",
+      "sudo cd gitserver/src",
+      "sudo docker-compose up",
     ]
   }
 }
