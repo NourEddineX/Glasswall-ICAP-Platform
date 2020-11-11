@@ -12,6 +12,6 @@ resource "azurerm_dns_a_record" "dns_record" {
   name                = var.dns_a_record_name
   zone_name           = data.azurerm_dns_zone.dns_zone.name
   resource_group_name = azurerm_resource_group.dns_rg.name
-  ttl                 = 300
+  ttl                 = 60
   records             = var.list_of_load_balancer_ips
 }
