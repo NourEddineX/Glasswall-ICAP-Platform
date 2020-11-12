@@ -79,10 +79,9 @@ resource "azurerm_dns_a_record" "git_server" {
   name                = local.git_service_name
   zone_name           = data.azurerm_dns_zone.curlywurly_zone.name
   resource_group_name = "gw-icap-rg-dns"
-  ttl                 = 300
+  ttl                 = 60
   records             = [module.git_server.linux_vm_private_ips]
 }
-
 module "security_group_rules" {
   source                      = "../azure/security-group-rules"
   network_security_group_name = module.security_group.name
