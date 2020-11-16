@@ -22,6 +22,10 @@ output "public_key_openssh" {
   value = tls_private_key.ssh.public_key_openssh
 }
 
+output "git_server_public_ips" {
+  value = module.git_server.linux_vm_public_ips
+}
+
 output "admin_user" {
   value = rancher2_bootstrap.admin.user
 }

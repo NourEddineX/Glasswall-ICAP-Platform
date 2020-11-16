@@ -10,6 +10,10 @@ output "linux_vm_public_ips" {
   value = module.rancher_server.linux_vm_public_ips
 }
 
+output "git_server_public_ips" {
+  value = module.rancher_server.git_server_public_ips
+}
+
 output "rancher_admin_token" {
   value = module.rancher_server.admin_token
 }
