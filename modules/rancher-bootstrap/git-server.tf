@@ -44,7 +44,7 @@ module "git_server" {
     docker_username      = data.azurerm_key_vault_secret.docker-username.value
     docker_password      = data.azurerm_key_vault_secret.docker-password.value
     docker_org           = data.azurerm_key_vault_secret.docker-org.value
-    docker_gitserver_tag = "1.6"
+    docker_gitserver_tag = "1.14"
   }))
   subnet_id          = module.subnet.id
   public_ip_id       = module.git_server_public_ip.id
