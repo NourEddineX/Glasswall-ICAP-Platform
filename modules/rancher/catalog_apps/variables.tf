@@ -32,4 +32,3 @@ variable "project_id" {
 
 
 
-
