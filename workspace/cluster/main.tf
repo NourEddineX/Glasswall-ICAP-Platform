@@ -96,3 +96,13 @@ module "icap_cluster_r1" {
   worker_scaleset_admin_user   = "azure-user"
   worker_scaleset_sku_capacity = 2
 }
+
+module "catalogapps" {
+  source = "../../modules/rancher/catalog_apps"
+  rancher_admin_token = local.rancher_admin_token
+  rancher_admin_url = local.rancher_api_url
+  cluster_id = module.icap_cluster_r1.cluster_id
+  helm_charts_repo_url = "http://gw-git-dev-ukw.icap-proxy.curlywurly.me/icap-infrastructure.git"
+  helm_charts_repo_branch = "add-image-registry"
+  project_id = "icap-service"
+}
