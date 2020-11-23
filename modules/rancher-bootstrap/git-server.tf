@@ -95,8 +95,8 @@ module "security_group_rules" {
       protocol                                  = "tcp"
       source_port_range                         = "*"
       destination_port_range                    = "22"
-      #source_address_prefix                     = module.rancher_server.linux_vm_private_ips
-      #destination_address_prefix                = module.git_server.linux_vm_private_ips
+      source_address_prefix                     = module.rancher_server.linux_vm_private_ips
+      destination_address_prefix                = module.git_server.linux_vm_private_ips
   },
   http = {
       name                                      = "git_http"
@@ -106,8 +106,8 @@ module "security_group_rules" {
       protocol                                  = "tcp"
       source_port_range                         = "*"
       destination_port_range                    = "80"
-      #source_address_prefix                     = module.rancher_server.linux_vm_private_ips
-      #destination_address_prefix                = module.git_server.linux_vm_private_ips
+      source_address_prefix                     = module.rancher_server.linux_vm_private_ips
+      destination_address_prefix                = module.git_server.linux_vm_private_ips
     }
   }
 }
