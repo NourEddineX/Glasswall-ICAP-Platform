@@ -144,7 +144,7 @@ module "icap_cluster_r2" {
 
 module "catalog" {
   source = "../../modules/rancher/catalogue"
-  helm_charts_repo_url    = "${local.git_server_url}/icap-infrastructure.git"
+  helm_charts_repo_url    = local.git_server_url
   helm_charts_repo_branch = "add-image-registry"
   rancher_admin_url = local.rancher_api_url
   rancher_admin_token = local.rancher_admin_token
