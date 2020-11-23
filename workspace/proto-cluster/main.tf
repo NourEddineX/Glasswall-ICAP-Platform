@@ -62,7 +62,7 @@ provider "azurerm" {
   tenant_id       = var.tenant_id
 }
 
-module "icap_cluster_r1" {
+module "icap_cluster_proto_z1" {
   source                       = "../../modules/gw/cluster"
   organisation                 = var.organisation
   environment                  = var.environment
@@ -72,7 +72,7 @@ module "icap_cluster_r1" {
   rancher_network              = local.rancher_network
   rancher_resource_group       = local.rancher_resource_group
   service_name                 = local.service_name
-  suffix                       = "r1"
+  suffix                       = "z1"
   azure_region                 = var.azure_region_r1
   client_id                    = data.azurerm_key_vault_secret.az-client-id.value
   client_secret                = data.azurerm_key_vault_secret.az-client-secret.value
@@ -102,8 +102,10 @@ module "icap_cluster_r1" {
 
 module "catalog" {
   source                  = "../../modules/rancher/catalogue"
-  helm_charts_repo_url    = local.git_server_url + "/icap-infrastructure.git"
+  helm_charts_repo_url    = "${local.git_server_url}/icap-infrastructure.git"
   helm_charts_repo_branch = "add-image-registry"
+  rancher_admin_url = local.rancher_api_url
+  rancher_admin_token = local.rancher_admin_token
   providers = {
     rancher2.admin = rancher2.admin
   }
