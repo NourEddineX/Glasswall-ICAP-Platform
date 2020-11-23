@@ -3,7 +3,7 @@ terraform {
     resource_group_name  = "tf-state-resource-group"
     storage_account_name = "gwtfstatestorageaccount"
     container_name       = "tfstatecontainer"
-    key                  = "gw-icap-dev-multi-cluster-terraform.tfstate"
+    key                  = "gw-icap-protocluster-develop-terraform.tfstate"
   }
 }
 
@@ -29,7 +29,7 @@ data "terraform_remote_state" "rancher_server" {
     resource_group_name  = "tf-state-resource-group"
     storage_account_name = "gwtfstatestorageaccount"
     container_name       = "tfstatecontainer"
-    key                  = "gw-rancher-dev-multi-cluster-terraform.tfstate"
+    key                  = "gw-rancher-protocluster-develop-terraform.tfstate"
   }
 }
 
