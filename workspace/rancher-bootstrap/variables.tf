@@ -7,7 +7,7 @@ variable "organisation" {
 variable "environment" {
   description = "Metadata Environment"
   type        = string
-  default     = "dev"
+  default     = "proto"
 }
 
 variable "project" {

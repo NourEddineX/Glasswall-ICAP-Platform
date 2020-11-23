@@ -25,7 +25,7 @@ variable "tenant_id" {
 variable "project" {
   description = "Metadata Project"
   type        = string
-  default     = "icap-proto"
+  default     = "icap"
 }
 
 variable "azure_region_r1" {
