@@ -26,6 +26,10 @@ output "git_server_public_ips" {
   value = module.git_server.linux_vm_public_ips
 }
 
+output "git_server_url" {
+  value = azurerm_dns_a_record.git_server.fqdn
+}
+
 output "admin_user" {
   value = rancher2_bootstrap.admin.user
 }

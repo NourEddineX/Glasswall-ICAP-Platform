@@ -21,11 +21,11 @@ terraform {
 }
 
 module "rancher_server" {
-  source                           = "../../modules/rancher-bootstrap"
-  organisation                     = var.organisation
-  project                          = var.project
-  environment                      = var.environment
-  suffix                           = var.suffix
-  azure_region                     = var.azure_region
-  custom_data_file_path            = filebase64("./scripts/cloud-init.yaml")
+  source                = "../../modules/rancher-bootstrap"
+  organisation          = var.organisation
+  project               = var.project
+  environment           = var.environment
+  suffix                = var.suffix
+  azure_region          = var.azure_region
+  custom_data_file_path = filebase64("./scripts/cloud-init.yaml")
 }

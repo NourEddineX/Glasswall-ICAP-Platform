@@ -14,6 +14,10 @@ output "git_server_public_ips" {
   value = module.rancher_server.git_server_public_ips
 }
 
+output "git_server_url" {
+  value = "http://${trimsuffix(module.rancher_server.git_server_url, ".")}"
+}
+
 output "rancher_admin_token" {
   value = module.rancher_server.admin_token
 }
@@ -27,11 +31,11 @@ output "rancher_internal_api_url" {
 }
 
 output "rancher_internal_server_url" {
-  value = trimsuffix(module.rancher_server.rancher_internal_api_url, ".") 
+  value = trimsuffix(module.rancher_server.rancher_internal_api_url, ".")
 }
 
 output "rancher_server_url" {
-  value = trimsuffix(module.rancher_server.rancher_api_url, ".") 
+  value = trimsuffix(module.rancher_server.rancher_api_url, ".")
 }
 
 output "rancher_token_id" {

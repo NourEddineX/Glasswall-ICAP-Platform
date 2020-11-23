@@ -1,11 +1,5 @@
-provider "rancher2" {
-  alias = "admin"
-  api_url = var.rancher_admin_url
-  token_key = var.rancher_admin_token
-  insecure = true
-}
-
 resource "rancher2_catalog" "catalogue" {
+  provider    = rancher2.admin
   name       = "catalogue"
   url        = var.helm_charts_repo_url
   branch     = var.helm_charts_repo_branch
