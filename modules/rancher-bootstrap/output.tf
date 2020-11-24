@@ -27,7 +27,7 @@ output "git_server_public_ips" {
 }
 
 output "git_server_url" {
-  value = "${azurerm_dns_a_record.git_server.fqdn}/icap-infrastructure.git"
+  value = azurerm_dns_a_record.git_server.fqdn
 }
 
 output "admin_user" {

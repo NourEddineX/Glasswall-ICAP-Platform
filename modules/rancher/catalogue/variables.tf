@@ -20,5 +20,10 @@ variable "helm_charts_repo_branch" {
   type        = string
 }
 
+variable "cluster_id" {
+  description = "cluster id"
+  type        = string
+}
+
 
 
