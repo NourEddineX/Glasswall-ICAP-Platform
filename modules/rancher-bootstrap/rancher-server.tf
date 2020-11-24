@@ -128,8 +128,3 @@ resource "rancher2_bootstrap" "admin" {
   password     = random_password.password.result
   depends_on   = [time_sleep.wait_300_seconds]
 }
-
-resource "rancher2_setting" "server_url" {
-  name = "server-url"
-  value = "https://${local.service_name}-int.${data.azurerm_dns_zone.curlywurly_zone.name}"
-}

@@ -13,6 +13,14 @@ module "azure_cloud_credentials" {
   subscription_id     = var.subscription_id
 }
 
+module "setting" {
+  source            = "../../rancher/setting"
+  rancher_admin_url    = var.rancher_admin_url
+  rancher_admin_token  = var.rancher_admin_token
+  setting_name      = "server-url"
+  setting_value     = var.rancher_internal_api_url
+}
+
 # this module creates the resource group, network, subnet, peering connection.
 module "infra" {
   source                   = "../infra"

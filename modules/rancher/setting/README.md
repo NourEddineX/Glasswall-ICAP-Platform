@@ -15,13 +15,14 @@
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| cluster\_id | cluster id | `string` | n/a | yes |
-| helm\_charts\_repo\_branch | The branch name of the repo to the helm charts | `string` | n/a | yes |
-| helm\_charts\_repo\_url | The repo url to the helm charts | `string` | n/a | yes |
 | rancher\_admin\_token | The Rancher Admin Token | `string` | n/a | yes |
 | rancher\_admin\_url | The Rancher API | `string` | n/a | yes |
+| setting\_name | Set the name | `string` | n/a | yes |
+| setting\_value | Set the value | `string` | n/a | yes |
 
 ## Outputs
 
-No output.
+| Name | Description |
+|------|-------------|
+| id | n/a |
 
