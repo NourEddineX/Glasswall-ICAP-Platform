@@ -44,9 +44,21 @@ variable "service_name" {
   type        = string
 }
 
+
+variable "cluster_quantity" {
+  description = "Quantity of clusters in Region"
+  type        = number
+}
+
 variable "suffix" {
   description = "The Suffix"
   type        = string
+}
+
+variable "infra_module" {
+  description = "The Suffix"
+  type        = string
+  default     = 0
 }
 
 variable "azure_region" {

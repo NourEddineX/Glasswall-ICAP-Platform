@@ -1,21 +1,21 @@
 output "cluster_name" {
-  value = rancher2_cluster.the_cluster.name
+  value = rancher2_cluster.main.name
 }
 
 output "cluster_id" {
-  value = rancher2_cluster.the_cluster.id
+  value = rancher2_cluster.main.id
 }
 
 output "crt_cluster_token" {
-  value = rancher2_cluster.the_cluster.cluster_registration_token.0.token
+  value = rancher2_cluster.main.cluster_registration_token.0.token
 }
 
 output "crt_cluster_id" {
-  value = rancher2_cluster.the_cluster.cluster_registration_token.0.cluster_id
+  value = rancher2_cluster.main.cluster_registration_token.0.cluster_id
 }
 
 output "crt_cluster_node_command" {
-  value = rancher2_cluster.the_cluster.cluster_registration_token.0.node_command
+  value = rancher2_cluster.main.cluster_registration_token.0.node_command
 }
 
 output "kubernetes_version" {

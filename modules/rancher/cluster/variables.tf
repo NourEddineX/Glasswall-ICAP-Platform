@@ -1,3 +1,14 @@
+# Common variables
+variable "organisation" {
+  description = "Metadata Organisation"
+  type        = string
+}
+
+variable "environment" {
+  description = "Metadata Environment"
+  type        = string
+}
+
 # Rancher API Url
 variable "rancher_admin_url" {
   description = "The Rancher API"
@@ -30,24 +41,19 @@ variable "subscription_id" {
   type        = string
 }
 
+variable "azure_region" {
+  description = "The cloud region"
+  type        = string
+}
+
 variable "cluster_network_plugin" {
   description = "Set the network plugin"
   type        = string
   default     = "canal"
 }
 
-variable "service_name" {
-  description = "The Service Name"
-  type        = string
-}
-
 variable "cluster_name" {
-  description = "Bootstrap the virtual machine with this file"
-  type        = string
-}
-
-variable "azure_region" {
-  description = "The Cloud Region"
+  description = "This is the name of the cluster"
   type        = string
 }
 
@@ -57,23 +63,18 @@ variable "kubernetes_version" {
   default     = "v1.19.2-rancher1-1"
 }
 
-variable "organisation" {
-  description = "Metadata Organisation"
-  type        = string
-}
-
-variable "environment" {
-  description = "Metadata Environment"
-  type        = string
-}
-
 variable "virtual_network_name" {
   description = "Virtual Network Name"
   type        = string
 }
 
 variable "subnet_name" {
-  description = "Subnet Name"
+  description = "The Subnet Name for the cluster config"
+  type        = string
+}
+
+variable "subnet_id" {
+  description = "The Subnet ID for the ScaleSet"
   type        = string
 }
 
@@ -82,10 +83,68 @@ variable "resource_group" {
   type        = string
 }
 
-
 variable "scaleset_name" {
   description = "The scale set name"
   type        = string
 }
 
+variable "public_key_openssh" {
+  description = "The Node SSH key"
+  type        = string
+}
 
+variable "os_offer" {
+  description = "Linux OS Offer"
+  type        = string
+}
+
+variable "os_sku" {
+  description = "Linux OS SKU"
+  type        = string
+}
+
+variable "os_version" {
+  description = "Linux OS Version"
+  type        = string
+  default     = "latest"
+}
+
+variable "master_scaleset_size" {
+  description = "The K8S Master Scaleset size"
+  type        = string
+}
+
+variable "master_scaleset_sku_capacity" {
+  description = "The K8S Master Scaleset sku capacity"
+  type        = string
+}
+
+variable "master_scaleset_admin_user" {
+  description = "The K8S Master Scaleset admin user"
+  type        = string
+}
+
+variable "worker_scaleset_size" {
+  description = "The K8S Worker Scaleset size"
+  type        = string
+}
+
+variable "worker_scaleset_sku_capacity" {
+  description = "The K8S Worker Scaleset sku capacity"
+  type        = string
+}
+
+variable "worker_scaleset_admin_user" {
+  description = "The K8S Worker Scaleset admin user"
+  type        = string
+}
+
+variable "worker_lb_backend_address_pool_id" {
+  description = "The K8S Worker Scaleset admin user"
+  type        = list(string)
+}
+
+variable "worker_lb_probe_id" {
+  description = "The K8S Worker LB Probe ID from Infra module"
+  type        = string
+}

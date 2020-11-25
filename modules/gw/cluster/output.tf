@@ -17,7 +17,7 @@ output "network_id" {
 output "subnet_name" {
   value = module.infra.subnet_name
 }
-
+/*
 output "cluster_name" {
   value = module.cluster.cluster_name
 }
@@ -52,7 +52,7 @@ output "cluster_secret_key" {
 
 output "cluster_token_enabled" {
   value = module.cluster.token_enabled
-}
+}*/
 
 output "cluster_worker_lb_dns_name" {
   value = module.infra.worker_lb_dns_name
