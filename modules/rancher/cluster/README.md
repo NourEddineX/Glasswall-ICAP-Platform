@@ -26,12 +26,14 @@
 | master\_scaleset\_size | The K8S Master Scaleset size | `string` | n/a | yes |
 | master\_scaleset\_sku\_capacity | The K8S Master Scaleset sku capacity | `string` | n/a | yes |
 | organisation | Metadata Organisation | `string` | n/a | yes |
-| os\_offer | Linux OS Offer | `string` | n/a | yes |
-| os\_sku | Linux OS SKU | `string` | n/a | yes |
-| os\_version | Linux OS Version | `string` | `"latest"` | no |
+| os\_offer | The Linux OS Offer | `string` | n/a | yes |
+| os\_publisher | The Linux OS Publisher | `string` | n/a | yes |
+| os\_sku | The Linux OS SKU | `string` | n/a | yes |
+| os\_version | The Linux OS Version | `string` | `"latest"` | no |
 | public\_key\_openssh | The Node SSH key | `string` | n/a | yes |
 | rancher\_admin\_token | The Rancher Admin Token | `string` | n/a | yes |
-| rancher\_admin\_url | The Rancher API | `string` | n/a | yes |
+| rancher\_admin\_url | The Rancher admin API | `string` | n/a | yes |
+| rancher\_internal\_api\_url | The Rancher internal API url | `string` | n/a | yes |
 | resource\_group | the resource group | `string` | n/a | yes |
 | scaleset\_name | The scale set name | `string` | n/a | yes |
 | subnet\_id | The Subnet ID for the ScaleSet | `string` | n/a | yes |

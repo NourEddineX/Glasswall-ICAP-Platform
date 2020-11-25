@@ -37,12 +37,6 @@ variable "suffix" {
   type        = string
 }
 
-
-variable "os_publisher" {
-  description = "Linux OS Publisher"
-  type        = string
-}
-
 variable "azure_region" {
   description = "The cloud region"
   type        = string

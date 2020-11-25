@@ -60,6 +60,7 @@ module "cluster" {
   tenant_id                      = var.tenant_id
   client_secret                  = var.client_secret
   subscription_id                = var.subscription_id
+  azure_region                   = var.azure_region
   resource_group                 = module.infra.resource_group_name
   virtual_network_name           = module.infra.network_name
   subnet_name                    = module.infra.subnet_name

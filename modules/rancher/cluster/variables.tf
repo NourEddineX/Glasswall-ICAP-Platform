@@ -9,9 +9,14 @@ variable "environment" {
   type        = string
 }
 
+variable "rancher_internal_api_url" {
+  description = "The Rancher internal API url"
+  type        = string
+}
+
 # Rancher API Url
 variable "rancher_admin_url" {
-  description = "The Rancher API"
+  description = "The Rancher admin API"
   type        = string
 }
 
@@ -93,18 +98,23 @@ variable "public_key_openssh" {
   type        = string
 }
 
+variable "os_publisher" {
+  description = "The Linux OS Publisher"
+  type        = string
+}
+
 variable "os_offer" {
-  description = "Linux OS Offer"
+  description = "The Linux OS Offer"
   type        = string
 }
 
 variable "os_sku" {
-  description = "Linux OS SKU"
+  description = "The Linux OS SKU"
   type        = string
 }
 
 variable "os_version" {
-  description = "Linux OS Version"
+  description = "The Linux OS Version"
   type        = string
   default     = "latest"
 }
